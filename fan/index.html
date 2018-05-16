@@ -14,14 +14,14 @@
         var clickbtn=document.getElementById("btn");
         setup();
         
-        // clickbtn.addEventListener('click',function(event){
-        //     cpf.initSpeechRecognition("cmn-Hant-TW")
-        // });
+         clickbtn.addEventListener('click',function(event){
+             cpf.initSpeechRecognition("cmn-Hant-TW")
+         });
 
-        // clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"));
+         clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"));
 
         function rr(){
-            
+            cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
                 for(i=0;i<=255;i+=10){
                    cpf.request('["analogWrite",6,'+i+']');
                 }            
