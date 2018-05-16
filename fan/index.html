@@ -20,21 +20,28 @@
 
          clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"));
 
-        function rr(){
-            cpf.initSpeechRecognition("cmn-Hant-TW")
-            cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
-                for(i=0;i<=255;i+=10){
-                   cpf.request('["analogWrite",6,'+i+']');
-                }            
-        }
-        // function GetRecognizeResult(Result,Type){
-        //     if(Result.includes("會不會")){
-        //         cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
+        // function rr(){
+        //     cpf.initSpeechRecognition("cmn-Hant-TW")
+        //     cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
         //         for(i=0;i<=255;i+=10){
         //            cpf.request('["analogWrite",6,'+i+']');
-        //         }
-        //     }
+        //         }            
         // }
+        function GetRecognizeResult(Result,Type){
+            if(Result.includes("會不會")){
+                cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
+                for(i=0;i<=255;i+=10){
+                   cpf.request('["analogWrite",6,'+i+']');
+                }
+                
+            }
+            else{
+                cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
+                for(i=255;i>0;i-=10){
+                   cpf.request('["analogWrite",6,'+i+']');
+                }
+            }
+        }
         
         function setup(){
             if(cpf){
