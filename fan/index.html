@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <button id="btn" onclick="rr()">開始語音</button>
+    <button id="btn" >開始語音</button>
     <script>
         var i;        
         var clickbtn=document.getElementById("btn");
@@ -35,7 +35,12 @@
                 }
                 
             }
-            
+            else{
+                cpf.SetSpeech("On","cmn-Hant-TW","來了好涼晚拿碗",0.5,2);
+                for(i=255;i>0;i-=10){
+                   cpf.request('["analogWrite",6,'+i+']');
+                }
+            }
         }
         
         function setup(){
