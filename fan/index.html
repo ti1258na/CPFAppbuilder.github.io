@@ -10,13 +10,14 @@
 
     <button id="btn">開始語音</button>
     <script>
-        var i;
-        setup();
+        var i;        
         var clickbtn=document.getElementById("btn");
-        clickbtn.addEventListener("click",cpf.initSpeechRecognition("cmn-Hant-TW"))
+        setup();
+
+        clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"))
 
         function GetRecognizeResult(Result,Type){
-            if(Result.includes("好熱")){
+            if(Result.includes("好")){
                 for(i=0;i<=255;i+10){
                    cpf.request('["analogWrite",6,'+i+']');
                 }
