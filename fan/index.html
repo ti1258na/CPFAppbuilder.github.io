@@ -13,8 +13,11 @@
         var i;        
         var clickbtn=document.getElementById("btn");
         setup();
+        clickbtn.addEventListener('click',function(event){
+            cpf.initSpeechRecognition("cmn-Hant-TW")
+        });
 
-        clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"));
+        // clickbtn.addEventListener('click',cpf.initSpeechRecognition("cmn-Hant-TW"));
 
         function GetRecognizeResult(Result,Type){
             if(Result.includes("會不會")){
