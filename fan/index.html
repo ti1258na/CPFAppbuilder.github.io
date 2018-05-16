@@ -18,7 +18,7 @@
         function GetRecognizeResult(Result,Type){
             if(Result.includes("好熱")){
                 for(i=0;i<=255;i+10){
-                   cpf.request('["analogWrite",6,i]');
+                   cpf.request('["analogWrite",6,'+i+']');
                 }
             }
         }
