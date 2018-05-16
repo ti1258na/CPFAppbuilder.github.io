@@ -10,7 +10,8 @@
 
     <button id="btn" >開始語音</button>
     <script>
-        var i;        
+        var i; 
+        var t;       
         var clickbtn=document.getElementById("btn");
         setup();
         
@@ -36,8 +37,8 @@
                 }
                 
             }else {
-                for(i=255;i>0;i-=10){
-                   cpf.request('["analogWrite",6,'+i+']');
+                for(t=i;t>0;t-=10){
+                   cpf.request('["analogWrite",6,'+t+']');
                 }
                 cpf.SetSpeech("On","cmn-Hant-TW","來了",0.5,2);}
             
